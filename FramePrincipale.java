@@ -50,7 +50,7 @@ public class FramePrincipale {
         sfogliaCatalogo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new EtaSesso();
+                new frameCatalogo();
             }
         });
 
@@ -61,7 +61,6 @@ public class FramePrincipale {
                 new FrameLogin();
             }
         });
-
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();

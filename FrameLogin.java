@@ -45,8 +45,8 @@ public class FrameLogin {
             public void actionPerformed(ActionEvent e) {
 
 
-                if(condizioni.isSelected() == true){
-                    new EtaSesso();
+                if(condizioni.isSelected() == true && !textpswrd.getText().isEmpty() && !textemail.getText().isEmpty()){
+                   new FrameShop();
                 }
 
             }

@@ -3,21 +3,18 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class EtaSesso {
-
-    JFrame etaSesso = new JFrame();
+public class FrameShop {
+    JFrame frame = new JFrame("SHOP");
 
     JButton bambino = new JButton("bambino/a");
     JButton uomo = new JButton("uomo");
     JButton donna = new JButton("donna");
 
-    public EtaSesso(){
-        etaSesso.setSize(400,400);
-        etaSesso.setVisible(true);
+    public FrameShop(){
+        frame.setPreferredSize(new Dimension(400,100));
+        frame.setLayout(new BorderLayout(100,300));
 
-        etaSesso.setLayout(new BorderLayout(10,30));
-
-        JPanel pannelloBottoni = new JPanel(new GridLayout(1, 3));
+        JPanel pannelloBottoni = new JPanel();
 
         pannelloBottoni.add(bambino);
         bambino.addActionListener(new ActionListener() {
@@ -43,10 +40,9 @@ public class EtaSesso {
             }
         });
 
-        etaSesso.add(pannelloBottoni);
-        etaSesso.setLocationRelativeTo(null);
-        // etaSesso.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        etaSesso.pack();
-        etaSesso.setVisible(true);
+        frame.add(pannelloBottoni);
+        frame.setLocationRelativeTo(null);
+        frame.pack();
+        frame.setVisible(true);
     }
 }
