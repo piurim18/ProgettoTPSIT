@@ -47,9 +47,7 @@ public class FrameLogin {
 
 
                 if(condizioni.isSelected() == true && !textpswrd.getText().isEmpty() && !textemail.getText().isEmpty()){
-                   //new FramePagamento();
-
-                            new FrameShop();
+                     new FrameShop();
                 }
 
             }
