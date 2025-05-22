@@ -12,6 +12,7 @@ public class FrameLogin {
     JButton vaiShop = new JButton("vai allo shop");
     JCheckBox condizioni = new JCheckBox("accetto condizioni privacy");
     Dimension dimension = new Dimension(1000,25);
+
     public FrameLogin(){
 
         JFrame login = new JFrame("login");
@@ -46,7 +47,9 @@ public class FrameLogin {
 
 
                 if(condizioni.isSelected() == true && !textpswrd.getText().isEmpty() && !textemail.getText().isEmpty()){
-                   new FrameShop();
+                   //new FramePagamento();
+
+                            new FrameShop();
                 }
 
             }
