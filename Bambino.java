@@ -7,43 +7,46 @@ public class Bambino {
 
 
     JLabel calzeBambino = new JLabel("calze dinosauri");
-    JButton btnCalze = new JButton("Aggiungi al carrello");
 
     JLabel scarpeGeox = new JLabel("scarpe Geox");
-    JButton btnScarpe = new JButton("Aggiungi al carrello");
 
     JLabel pantaloniZaraKids = new JLabel("pantaloni Zara Kids");
-    JButton btnPantaloni = new JButton("Aggiungi al carrello");
 
     JLabel magliettaOVS = new JLabel("maglietta OVS");
-    JButton btnMaglietta = new JButton("Aggiungi al carrello");
 
     JLabel giaccaBenetton = new JLabel("giacca Benetton");
-    JButton btnGiacca = new JButton("Aggiungi al carrello");
 
     JLabel cappelloGap = new JLabel("cappello GAP");
-    JButton btnCappello = new JButton("Aggiungi al carrello");
 
     JLabel zainoSeven = new JLabel("zaino Seven");
-    JButton btnZaino = new JButton("Aggiungi al carrello");
 
     JLabel felpaNike = new JLabel("felpa Nike");
-    JButton btnFelpa = new JButton("Aggiungi al carrello");
 
     public Bambino(){
 
-        bambino.setSize(400,400);
+        bambino.setSize(1000,1000);
         bambino.setVisible(true);
 
-        bambino.setLayout(new BorderLayout(10,30));
+        bambino.setLayout(new GridLayout(8,3));
 
         ImageIcon im1=new ImageIcon("immagini/im1.jpg");
+        int newWidth = 100; // larghezza desiderata
+        int newHeight = 100; // altezza desiderata
+        Image resizedImage = im1.getImage().getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon = new ImageIcon(resizedImage);
+
+        // Crea un JLabel e imposta l'icona ridimensionata
+        JLabel calzeBambino = new JLabel();
+        calzeBambino.setIcon(resizedIcon);
+        calzeBambino.setPreferredSize(new Dimension(newWidth, newHeight));
+
         calzeBambino.setIcon(im1);
-        calzeBambino.setPreferredSize(new Dimension(200,200));
+        calzeBambino.setPreferredSize(new Dimension(400,300));
+
 
         ImageIcon im2=new ImageIcon("immagini/im2.jpg");
         scarpeGeox.setIcon(im2);
-        scarpeGeox.setPreferredSize(new Dimension(200,200));
+        scarpeGeox.setPreferredSize(new Dimension(100,100));
 
         ImageIcon im3=new ImageIcon("immagini/im3.jpg");
         pantaloniZaraKids.setIcon(im3);
@@ -70,6 +73,7 @@ public class Bambino {
         felpaNike.setPreferredSize(new Dimension(200,200));
 
         bambino.add(calzeBambino);
+        bambino.add(scarpeGeox);
 
 
         bambino.setLocationRelativeTo(null);
