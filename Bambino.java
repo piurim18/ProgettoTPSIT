@@ -41,7 +41,7 @@ public class Bambino {
         calzeBambino.setPreferredSize(new Dimension(newWidth, newHeight));
 
         calzeBambino.setIcon(im1);
-        calzeBambino.setPreferredSize(new Dimension(300,300));
+        calzeBambino.setPreferredSize(new Dimension(400,300));
 
 
         ImageIcon im2=new ImageIcon("immagini/im2.jpg");
