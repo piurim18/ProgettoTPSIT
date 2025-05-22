@@ -45,7 +45,7 @@ public class EtaSesso {
 
         etaSesso.add(pannelloBottoni);
         etaSesso.setLocationRelativeTo(null);
-       // etaSesso.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        // etaSesso.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         etaSesso.pack();
         etaSesso.setVisible(true);
     }
