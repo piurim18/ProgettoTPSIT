@@ -5,6 +5,7 @@ public class Bambino {
 
     JFrame bambino = new JFrame();
 
+
     JLabel calzeBambino = new JLabel("calze nike");
     JButton btnCalze = new JButton("Aggiungi al carrello");
 
