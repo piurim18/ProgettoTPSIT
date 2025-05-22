@@ -50,7 +50,15 @@ public class FramePrincipale {
         sfogliaCatalogo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new EtaSesso(); // Presumo sia un'altra classe definita altrove
+                new EtaSesso();
+            }
+        });
+
+
+        accesso.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrameLogin();
             }
         });
 
