@@ -3,20 +3,26 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Frame {
+public class FramePrincipale {
 
     JFrame frame = new JFrame();
 
-    JButton accesso = new JButton("accesso");
-    JButton sfogliaCatalogo = new JButton("sfoglia catalogo");
+    JLabel titolo = new JLabel("E-COMMERCE ONLINE");
+    JButton accesso = new JButton("ACCEDI");
+    JButton sfogliaCatalogo = new JButton("SFOGLIA CATALOGO");
 
-    public Frame(){
+    public FramePrincipale(){
 
         frame.setPreferredSize(new Dimension(500, 300));
-        frame.setLayout(new BorderLayout(10,30));
+        JPanel pannelloBottoni = new JPanel(new GridLayout(3, 1));
+        frame.setContentPane(pannelloBottoni);
 
-        JPanel pannelloBottoni = new JPanel(new GridLayout(1, 2));
 
+
+        titolo.setPreferredSize(new Dimension(250,250));
+        accesso.setSize(100,100);
+        sfogliaCatalogo.setSize(100,100);
+        pannelloBottoni.add(titolo);
         pannelloBottoni.add(accesso);
         pannelloBottoni.add(sfogliaCatalogo);
         sfogliaCatalogo.addActionListener(new ActionListener() {
@@ -26,7 +32,6 @@ public class Frame {
             }
         });
 
-        frame.add(pannelloBottoni,BorderLayout.CENTER);
 
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
