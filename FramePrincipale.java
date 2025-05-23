@@ -50,7 +50,8 @@ public class FramePrincipale {
         sfogliaCatalogo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new frameCatalogo();
+                new FrameCatalogo();
+                frame.dispose();
             }
         });
 
@@ -59,11 +60,12 @@ public class FramePrincipale {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new FrameLogin();
+                frame.dispose();
             }
         });
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }

@@ -15,12 +15,13 @@ public class Bambino {
     JLabel zainoSeven = new JLabel("zaino Seven");
     JLabel felpaNike = new JLabel("felpa Nike");
 
+
     public Bambino(){
 
         bambino.setSize(500,500);
         bambino.setVisible(true);
 
-        bambino.setLayout(new GridLayout(4,4));
+        bambino.setLayout(new GridLayout(4,2));
 
         ImageIcon im1=new ImageIcon("immagini/im1.jpg");
         int largo1 = 100;
@@ -129,6 +130,7 @@ public class Bambino {
         felpaNike.setPreferredSize(new Dimension(largo8, alto8));
 
         felpaNike.setPreferredSize(new Dimension(400,300));
+
 
 
 

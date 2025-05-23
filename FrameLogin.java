@@ -12,15 +12,16 @@ public class FrameLogin {
     JButton vaiShop = new JButton("vai allo shop");
     JCheckBox condizioni = new JCheckBox("accetto condizioni privacy");
     Dimension dimension = new Dimension(1000,25);
+    JButton goHome = new JButton("torna alla home");
 
     public FrameLogin(){
 
-        JFrame login = new JFrame("login");
-        login.setPreferredSize(new Dimension(500, 300));
-        login.setLayout(new BorderLayout());
+        JFrame frameLogin = new JFrame("login");
+        frameLogin.setPreferredSize(new Dimension(500, 300));
+        frameLogin.setLayout(new BorderLayout());
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
-        login.setContentPane(mainPanel);
+        frameLogin.setContentPane(mainPanel);
 
 
         JPanel panelLog = new JPanel();
@@ -45,7 +46,6 @@ public class FrameLogin {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
                 if(condizioni.isSelected() == true && !textpswrd.getText().isEmpty() && !textemail.getText().isEmpty()){
                      new FrameShop();
                 }
@@ -54,14 +54,25 @@ public class FrameLogin {
         });
         logFIn.add(vaiShop);
 
+        JPanel panelHome = new JPanel();
+        panelHome.add(goHome);
+        goHome.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FramePrincipale();
+                frameLogin.dispose();
+            }
+        });
+
 
         mainPanel.add(panelLog,BorderLayout.NORTH);
         mainPanel.add(logFIn,BorderLayout.CENTER);
+        mainPanel.add(panelHome,BorderLayout.SOUTH);
 
 
-        login.pack();
-        login.setLocationRelativeTo(null);
-        login.setVisible(true);
+        frameLogin.pack();
+        frameLogin.setLocationRelativeTo(null);
+        frameLogin.setVisible(true);
     }
 
 }
