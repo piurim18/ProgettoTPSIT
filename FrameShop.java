@@ -20,7 +20,7 @@ public class FrameShop {
         bambino.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Bambino();
+                new BambinoShop();
             }
         });
 
@@ -41,8 +41,9 @@ public class FrameShop {
         });
 
         frame.add(pannelloBottoni);
-        frame.setLocationRelativeTo(null);
         frame.pack();
+        frame.setLocationRelativeTo(null);
+
         frame.setVisible(true);
     }
 }
