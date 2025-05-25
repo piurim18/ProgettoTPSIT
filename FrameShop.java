@@ -28,7 +28,7 @@ public class FrameShop {
         uomo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Uomo();
+                new UomoShop();
             }
         });
 
@@ -36,7 +36,7 @@ public class FrameShop {
         donna.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Donna();
+                new DonnaShop();
             }
         });
 
