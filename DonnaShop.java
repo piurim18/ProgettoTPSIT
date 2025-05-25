@@ -20,6 +20,7 @@ public class DonnaShop {
         addProduct("cappello ", "immagini/im14.jpg", "€35.00");
 
         donna.setVisible(true);
+        donna.setLocationRelativeTo(null);
     }
 
     private void addProduct(String descrizioneProdotto, String percorsoImmagine, String prezzo) {
