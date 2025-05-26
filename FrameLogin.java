@@ -46,7 +46,7 @@ public class FrameLogin {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if(condizioni.isSelected() == true && !textpswrd.getText().isEmpty() && !textemail.getText().isEmpty()){
+                if(condizioni.isSelected() == true && !textpswrd.getText().isEmpty() && !textemail.getText().isEmpty() && textemail.getText().contains("@")){
                      new FrameShop();
                 }
 

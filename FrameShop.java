@@ -9,14 +9,25 @@ public class FrameShop {
     JButton bambino = new JButton("bambino/a");
     JButton uomo = new JButton("uomo");
     JButton donna = new JButton("donna");
+    JButton vaiACarrello = new JButton("Vai al carrello");
 
     public FrameShop(){
-        frame.setPreferredSize(new Dimension(400,100));
-        frame.setLayout(new BorderLayout(100,300));
+        frame.setPreferredSize(new Dimension(500, 200));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel pannelloBottoni = new JPanel();
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        pannelloBottoni.add(bambino);
+        JPanel pannelloScelte = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        pannelloScelte.add(bambino);
+        pannelloScelte.add(uomo);
+        pannelloScelte.add(donna);
+
+        JPanel pannelloCarrello = new JPanel();
+        vaiACarrello.setPreferredSize(new Dimension(200, 30));
+        pannelloCarrello.add(vaiACarrello);
+
         bambino.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -24,7 +35,6 @@ public class FrameShop {
             }
         });
 
-        pannelloBottoni.add(uomo);
         uomo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -32,7 +42,6 @@ public class FrameShop {
             }
         });
 
-        pannelloBottoni.add(donna);
         donna.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -40,10 +49,20 @@ public class FrameShop {
             }
         });
 
-        frame.add(pannelloBottoni);
+        vaiACarrello.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrameCarrello();
+            }
+        });
+
+        mainPanel.add(pannelloScelte);
+        mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
+        mainPanel.add(pannelloCarrello);
+
+        frame.setContentPane(mainPanel);
         frame.pack();
         frame.setLocationRelativeTo(null);
-
         frame.setVisible(true);
     }
 }

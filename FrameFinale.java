@@ -26,5 +26,6 @@ public class FrameFinale {
         frameFinale.pack();
         frameFinale.setLocationRelativeTo(null);
         frameFinale.setVisible(true);
+        frameFinale.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }

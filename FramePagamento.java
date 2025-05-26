@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FramePagamento {
 
@@ -59,6 +61,12 @@ public class FramePagamento {
         paga.setAlignmentX(Component.CENTER_ALIGNMENT);
         paga.setMaximumSize(new Dimension(300, 50));
         panelFin.add(paga);
+        paga.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrameFinale();
+            }
+        });
 
         mainPanel.add(panelInserimento);
         mainPanel.add(panelFin);
