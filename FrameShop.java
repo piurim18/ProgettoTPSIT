@@ -17,15 +17,36 @@ public class FrameShop {
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder());
 
         JPanel pannelloScelte = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        pannelloScelte.setOpaque(true);
+        pannelloScelte.setBackground(Color.black);
+
         pannelloScelte.add(bambino);
+        bambino.setOpaque(true);
+        bambino.setBackground(new Color(61,59,59));
+        bambino.setForeground(Color.white);
+
+
         pannelloScelte.add(uomo);
+        uomo.setOpaque(true);
+        uomo.setBackground(new Color(61,59,59));
+        uomo.setForeground(Color.white);
+
         pannelloScelte.add(donna);
+        donna.setOpaque(true);
+        donna.setBackground(new Color(61,59,59));
+        donna.setForeground(Color.white);
+
 
         JPanel pannelloCarrello = new JPanel();
+        pannelloCarrello.setOpaque(true);
+        pannelloCarrello.setBackground(Color.black);
         vaiACarrello.setPreferredSize(new Dimension(200, 30));
+        vaiACarrello.setOpaque(true);
+        vaiACarrello.setBackground(new Color(61,59,59));
+        vaiACarrello.setForeground(Color.white);
         pannelloCarrello.add(vaiACarrello);
 
         bambino.addActionListener(new ActionListener() {
@@ -61,7 +82,7 @@ public class FrameShop {
         });
 
         mainPanel.add(pannelloScelte);
-        mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
+        mainPanel.add(Box.createRigidArea(new Dimension()));
         mainPanel.add(pannelloCarrello);
 
         frame.setContentPane(mainPanel);

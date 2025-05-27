@@ -25,7 +25,8 @@ public class Bambino {
 
         JPanel panelProd = new JPanel(new GridLayout(4, 2, 10, 10));
         panelProd.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
+        panelProd.setOpaque(true);
+        panelProd.setBackground(Color.black);
 
         ImageIcon im1 = new ImageIcon("immagini/im1.jpg");
         Image img1 = im1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
@@ -33,6 +34,9 @@ public class Bambino {
         calzeBambino.setHorizontalTextPosition(JLabel.CENTER);
         calzeBambino.setVerticalTextPosition(JLabel.BOTTOM);
         calzeBambino.setHorizontalAlignment(JLabel.CENTER);
+        calzeBambino.setOpaque(true);
+        calzeBambino.setBackground(Color.black);
+        calzeBambino.setForeground(Color.white);
         panelProd.add(calzeBambino);
 
 
