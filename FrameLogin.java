@@ -26,11 +26,28 @@ public class FrameLogin {
 
         JPanel panelLog = new JPanel();
         panelLog.setLayout(new BoxLayout(panelLog, BoxLayout.Y_AXIS));
+        panelLog.setOpaque(true);
+        panelLog.setBackground(Color.black);
 
         email.setAlignmentX(Component.LEFT_ALIGNMENT);
+        email.setOpaque(true);
+        email.setBackground(Color.black);
+        email.setForeground(Color.white);
+
         textemail.setMaximumSize(dimension);
+        textemail.setOpaque(true);
+        textemail.setBackground(new Color(61,59,59));
+        textemail.setForeground(Color.white);
+
         pswr.setAlignmentX(Component.LEFT_ALIGNMENT);
+        pswr.setOpaque(true);
+        pswr.setBackground(Color.black);
+        pswr.setForeground(Color.white);
+
         textpswrd.setMaximumSize(dimension);
+        textpswrd.setOpaque(true);
+        textpswrd.setBackground(new Color(61,59,59));
+        textpswrd.setForeground(Color.white);
 
         panelLog.add(email);
         panelLog.add(textemail);
@@ -40,7 +57,14 @@ public class FrameLogin {
 
         JPanel logFIn = new JPanel();
         logFIn.add(condizioni);
+        condizioni.setOpaque(true);
+        condizioni.setBackground(Color.black);
+        condizioni.setForeground(Color.white);
+        logFIn.setOpaque(true);
+        logFIn.setBackground(Color.black);
         vaiShop.setAlignmentX(Component.CENTER_ALIGNMENT);
+        vaiShop.setBackground(new Color(61,59,59));
+        vaiShop.setForeground(Color.white);
         vaiShop.setPreferredSize(new Dimension(350,50));
         vaiShop.addActionListener(new ActionListener() {
             @Override
@@ -56,6 +80,11 @@ public class FrameLogin {
         logFIn.add(vaiShop);
 
         JPanel panelHome = new JPanel();
+        panelHome.setOpaque(true);
+        panelHome.setBackground(Color.black);
+        goHome.setOpaque(true);
+        goHome.setBackground(new Color(61,59,59));
+        goHome.setForeground(Color.white);
         panelHome.add(goHome);
         goHome.addActionListener(new ActionListener() {
             @Override
