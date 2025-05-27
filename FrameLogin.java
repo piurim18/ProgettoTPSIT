@@ -8,7 +8,7 @@ public class FrameLogin {
     JLabel email = new JLabel("email");
     JTextField textemail= new JTextField();
     JLabel pswr = new JLabel("password");
-    JTextField textpswrd = new JTextField();
+    JPasswordField textpswrd = new JPasswordField();
     JButton vaiShop = new JButton("vai allo shop");
     JCheckBox condizioni = new JCheckBox("accetto condizioni privacy");
     Dimension dimension = new Dimension(1000,25);
@@ -50,6 +50,7 @@ public class FrameLogin {
                      new FrameShop();
                 }
 
+                frameLogin.dispose();
             }
         });
         logFIn.add(vaiShop);

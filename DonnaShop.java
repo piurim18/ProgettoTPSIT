@@ -1,29 +1,50 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class DonnaShop {
 
     JFrame donna = new JFrame();
     ArrayList<JLabel> listaPrezziDonna = new ArrayList<>();
+    JButton goShop = new JButton("torna allo shop");
 
     public DonnaShop() {
         donna.setSize(800, 800);
-        donna.setLayout(new GridLayout(3, 2));
+        donna.setLayout(new BorderLayout());
+
+        JPanel prodottiPanel = new JPanel(new GridLayout(4, 2));
+        prodottiPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
 
-        addProduct("vestito ", "immagini/im9.jpg", "€53.59");
-        addProduct("mutandine ", "immagini/im10.jpg", "€9.99");
-        addProduct("reggiseno ", "immagini/im11.jpg", "€13.50");
-        addProduct("jeans ", "immagini/im12.jpg", "€31.19");
-        addProduct("maglietta ", "immagini/im13.jpg", "€24.90");
-        addProduct("cappello ", "immagini/im14.jpg", "€35.00");
+        addProduct("vestito ", "immagini/im9.jpg", "€53.59",prodottiPanel);
+        addProduct("mutandine ", "immagini/im10.jpg", "€9.99",prodottiPanel);
+        addProduct("reggiseno ", "immagini/im11.jpg", "€13.50",prodottiPanel);
+        addProduct("jeans ", "immagini/im12.jpg", "€31.19",prodottiPanel);
+        addProduct("maglietta ", "immagini/im13.jpg", "€24.90",prodottiPanel);
+        addProduct("cappello ", "immagini/im14.jpg", "€35.00",prodottiPanel);
+
+        donna.add(prodottiPanel, BorderLayout.CENTER);
+
+        JPanel bottonePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        goShop.setPreferredSize(new Dimension(200, 40));
+        bottonePanel.add(goShop);
+        goShop.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrameShop();
+                donna.dispose();
+            }
+        });
+
+        donna.add(bottonePanel, BorderLayout.SOUTH);
 
         donna.setVisible(true);
         donna.setLocationRelativeTo(null);
     }
 
-    private void addProduct(String descrizioneProdotto, String percorsoImmagine, String prezzo) {
+    private void addProduct(String descrizioneProdotto, String percorsoImmagine, String prezzo, JPanel pannello) {
         JPanel prodottoPanel = new JPanel();
         prodottoPanel.setLayout(new BoxLayout(prodottoPanel, BoxLayout.Y_AXIS));
         prodottoPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -61,6 +82,6 @@ public class DonnaShop {
         prodottoPanel.add(labelPrezzo);
         prodottoPanel.add(bottoneCarrello);
 
-        donna.add(prodottoPanel);
+        pannello.add(prodottoPanel);
     }
 }

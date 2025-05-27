@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Bambino {
 
@@ -14,136 +16,104 @@ public class Bambino {
     JLabel cappelloGap = new JLabel("cappello GAP");
     JLabel zainoSeven = new JLabel("zaino Seven");
     JLabel felpaNike = new JLabel("felpa Nike");
+    JButton goCatalogo = new JButton("torna al catalogo");
+
+    public Bambino() {
+        bambino.setSize(600, 700);
+        bambino.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        bambino.setLayout(new BorderLayout());
+
+        JPanel panelProd = new JPanel(new GridLayout(4, 2, 10, 10));
+        panelProd.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
 
-    public Bambino(){
-
-        bambino.setSize(500,500);
-        bambino.setVisible(true);
-
-        bambino.setLayout(new GridLayout(4,2));
-
-        ImageIcon im1=new ImageIcon("immagini/im1.jpg");
-        int largo1 = 100;
-        int alto1 = 100;
-        Image resizedImage = im1.getImage().getScaledInstance(largo1, alto1, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon1 = new ImageIcon(resizedImage);
-
-        calzeBambino.setIcon(resizedIcon1);
-        calzeBambino.setPreferredSize(new Dimension(largo1, alto1));
-
-        calzeBambino.setPreferredSize(new Dimension(400,300));
+        ImageIcon im1 = new ImageIcon("immagini/im1.jpg");
+        Image img1 = im1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        calzeBambino.setIcon(new ImageIcon(img1));
+        calzeBambino.setHorizontalTextPosition(JLabel.CENTER);
+        calzeBambino.setVerticalTextPosition(JLabel.BOTTOM);
+        calzeBambino.setHorizontalAlignment(JLabel.CENTER);
+        panelProd.add(calzeBambino);
 
 
-
-        ImageIcon im2=new ImageIcon("immagini/im2.jpg");
-        int largo2 = 100;
-        int alto2 = 100;
-        Image resizedImage2 = im2.getImage().getScaledInstance(largo2, alto2, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon2 = new ImageIcon(resizedImage2);
-
-        scarpeGeox.setIcon(resizedIcon2);
-        scarpeGeox.setPreferredSize(new Dimension(largo2, alto2));
-
-        scarpeGeox.setPreferredSize(new Dimension(400,300));
+        ImageIcon im2 = new ImageIcon("immagini/im2.jpg");
+        Image img2 = im2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        scarpeGeox.setIcon(new ImageIcon(img2));
+        scarpeGeox.setHorizontalTextPosition(JLabel.CENTER);
+        scarpeGeox.setVerticalTextPosition(JLabel.BOTTOM);
+        scarpeGeox.setHorizontalAlignment(JLabel.CENTER);
+        panelProd.add(scarpeGeox);
 
 
+        ImageIcon im3 = new ImageIcon("immagini/im3.jpg");
+        Image img3 = im3.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        pantaloniZaraKids.setIcon(new ImageIcon(img3));
+        pantaloniZaraKids.setHorizontalTextPosition(JLabel.CENTER);
+        pantaloniZaraKids.setVerticalTextPosition(JLabel.BOTTOM);
+        pantaloniZaraKids.setHorizontalAlignment(JLabel.CENTER);
+        panelProd.add(pantaloniZaraKids);
 
 
-        ImageIcon im3=new ImageIcon("immagini/im3.jpg");
-        int largo3 = 100;
-        int alto3 = 100;
-        Image resizedImage3 = im3.getImage().getScaledInstance(largo3, alto3, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon3 = new ImageIcon(resizedImage3);
-
-        pantaloniZaraKids.setIcon(resizedIcon3);
-        pantaloniZaraKids.setPreferredSize(new Dimension(largo3, alto3));
-
-        pantaloniZaraKids.setPreferredSize(new Dimension(400,300));
+        ImageIcon im4 = new ImageIcon("immagini/im4.jpg");
+        Image img4 = im4.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        magliettaOVS.setIcon(new ImageIcon(img4));
+        magliettaOVS.setHorizontalTextPosition(JLabel.CENTER);
+        magliettaOVS.setVerticalTextPosition(JLabel.BOTTOM);
+        magliettaOVS.setHorizontalAlignment(JLabel.CENTER);
+        panelProd.add(magliettaOVS);
 
 
+        ImageIcon im5 = new ImageIcon("immagini/im5.jpg");
+        Image img5 = im5.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        giaccaBenetton.setIcon(new ImageIcon(img5));
+        giaccaBenetton.setHorizontalTextPosition(JLabel.CENTER);
+        giaccaBenetton.setVerticalTextPosition(JLabel.BOTTOM);
+        giaccaBenetton.setHorizontalAlignment(JLabel.CENTER);
+        panelProd.add(giaccaBenetton);
 
 
-        ImageIcon im4=new ImageIcon("immagini/im4.jpg");
-        int largo4 = 100;
-        int alto4 = 100;
-        Image resizedImage4 = im4.getImage().getScaledInstance(largo4, alto4, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon4 = new ImageIcon(resizedImage4);
-
-        magliettaOVS.setIcon(resizedIcon4);
-        magliettaOVS.setPreferredSize(new Dimension(largo4, alto4));
-
-        magliettaOVS.setPreferredSize(new Dimension(400,300));
+        ImageIcon im6 = new ImageIcon("immagini/im6.jpg");
+        Image img6 = im6.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        cappelloGap.setIcon(new ImageIcon(img6));
+        cappelloGap.setHorizontalTextPosition(JLabel.CENTER);
+        cappelloGap.setVerticalTextPosition(JLabel.BOTTOM);
+        cappelloGap.setHorizontalAlignment(JLabel.CENTER);
+        panelProd.add(cappelloGap);
 
 
+        ImageIcon im7 = new ImageIcon("immagini/im7.jpg");
+        Image img7 = im7.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        zainoSeven.setIcon(new ImageIcon(img7));
+        zainoSeven.setHorizontalTextPosition(JLabel.CENTER);
+        zainoSeven.setVerticalTextPosition(JLabel.BOTTOM);
+        zainoSeven.setHorizontalAlignment(JLabel.CENTER);
+        panelProd.add(zainoSeven);
 
 
-        ImageIcon im5=new ImageIcon("immagini/im5.jpg");
-        int largo5 = 100;
-        int alto5 = 100;
-        Image resizedImage5 = im5.getImage().getScaledInstance(largo5, alto5, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon5 = new ImageIcon(resizedImage5);
+        ImageIcon im8 = new ImageIcon("immagini/im8.jpg");
+        Image img8 = im8.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        felpaNike.setIcon(new ImageIcon(img8));
+        felpaNike.setHorizontalTextPosition(JLabel.CENTER);
+        felpaNike.setVerticalTextPosition(JLabel.BOTTOM);
+        felpaNike.setHorizontalAlignment(JLabel.CENTER);
+        panelProd.add(felpaNike);
 
-        giaccaBenetton.setIcon(resizedIcon5);
-        giaccaBenetton.setPreferredSize(new Dimension(largo5, alto5));
+        bambino.add(panelProd, BorderLayout.CENTER);
 
-        giaccaBenetton.setPreferredSize(new Dimension(400,300));
-
-
-
-
-        ImageIcon im6=new ImageIcon("immagini/im6.jpg");
-        int largo6 = 100;
-        int alto6 = 100;
-        Image resizedImage6 = im6.getImage().getScaledInstance(largo6, alto6, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon6 = new ImageIcon(resizedImage6);
-
-        cappelloGap.setIcon(resizedIcon6);
-        cappelloGap.setPreferredSize(new Dimension(largo6, alto6));
-
-        cappelloGap.setPreferredSize(new Dimension(400,300));
-
-
-
-
-        ImageIcon im7=new ImageIcon("immagini/im7.jpg");
-        int largo7 = 100;
-        int alto7 = 100;
-        Image resizedImage7 = im7.getImage().getScaledInstance(largo7, alto7, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon7 = new ImageIcon(resizedImage7);
-
-        zainoSeven.setIcon(resizedIcon7);
-        zainoSeven.setPreferredSize(new Dimension(largo7, alto7));
-
-        zainoSeven.setPreferredSize(new Dimension(400,300));
-
-
-
-
-        ImageIcon im8=new ImageIcon("immagini/im8.jpg");
-        int largo8 = 100;
-        int alto8 = 100;
-        Image resizedImage8 = im8.getImage().getScaledInstance(largo8, alto8, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon8 = new ImageIcon(resizedImage8);
-
-        felpaNike.setIcon(resizedIcon8);
-        felpaNike.setPreferredSize(new Dimension(largo8, alto8));
-
-        felpaNike.setPreferredSize(new Dimension(400,300));
-
-
-
-
-        bambino.add(calzeBambino);
-        bambino.add(scarpeGeox);
-        bambino.add(pantaloniZaraKids);
-        bambino.add(magliettaOVS);
-        bambino.add(giaccaBenetton);
-        bambino.add(cappelloGap);
-        bambino.add(zainoSeven);
-        bambino.add(felpaNike);
+        JPanel panelButton = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        goCatalogo.setPreferredSize(new Dimension(200, 40));
+        panelButton.add(goCatalogo);
+        goCatalogo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FrameCatalogo();
+                bambino.dispose();
+            }
+        });
+        bambino.add(panelButton, BorderLayout.SOUTH);
 
 
         bambino.setLocationRelativeTo(null);
+        bambino.setVisible(true);
     }
 }

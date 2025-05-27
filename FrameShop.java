@@ -32,6 +32,7 @@ public class FrameShop {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new BambinoShop();
+                frame.dispose();
             }
         });
 
@@ -39,6 +40,7 @@ public class FrameShop {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new UomoShop();
+                frame.dispose();
             }
         });
 
@@ -46,6 +48,7 @@ public class FrameShop {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new DonnaShop();
+                frame.dispose();
             }
         });
 
@@ -53,6 +56,7 @@ public class FrameShop {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new FrameCarrello();
+                frame.dispose();
             }
         });
 

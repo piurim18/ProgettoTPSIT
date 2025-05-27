@@ -25,6 +25,7 @@ public class FrameCatalogo {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Bambino();
+                etaSesso.dispose();
             }
         });
 
@@ -32,6 +33,7 @@ public class FrameCatalogo {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Uomo();
+                etaSesso.dispose();
             }
         });
 
@@ -39,6 +41,7 @@ public class FrameCatalogo {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Donna();
+                etaSesso.dispose();
             }
         });
 
