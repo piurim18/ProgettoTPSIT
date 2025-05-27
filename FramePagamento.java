@@ -65,6 +65,7 @@ public class FramePagamento {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new FrameFinale();
+                frame.dispose();
             }
         });
 

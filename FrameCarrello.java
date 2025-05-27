@@ -19,6 +19,7 @@ public class FrameCarrello {
          labelLista.setHorizontalAlignment(SwingConstants.CENTER);
 
          mainPanel.add(labelLista,BorderLayout.NORTH);
+         carrello.setEditable(false);
          mainPanel.add(carrello,BorderLayout.CENTER);
 
          JPanel panelBottone = new JPanel();
@@ -29,6 +30,7 @@ public class FrameCarrello {
              @Override
              public void actionPerformed(ActionEvent e) {
                  new FramePagamento();
+                 frame.dispose();
              }
          });
 
