@@ -70,6 +70,8 @@ public class FrameLogin {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                ControlloPsw.CheckPassword = new String(textpswrd.getPassword());
+
                 if(condizioni.isSelected() == true && !textpswrd.getText().isEmpty() && !textemail.getText().isEmpty() && textemail.getText().contains("@")){
                      new FrameShop();
                     frameLogin.dispose();

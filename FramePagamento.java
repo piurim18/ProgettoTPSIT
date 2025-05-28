@@ -43,24 +43,29 @@ public class FramePagamento {
         labelPswrd.setOpaque(true);
         labelPswrd.setBackground(Color.black);
         labelPswrd.setForeground(Color.white);
+
         panelInserimento.add(pswr);
         pswr.setOpaque(true);
         pswr.setBackground(new Color(61,59,59));
         pswr.setForeground(Color.white);
+
         panelInserimento.add(Box.createVerticalStrut(10));
         panelInserimento.add(labelIndirizzo);
         labelIndirizzo.setOpaque(true);
         labelIndirizzo.setBackground(Color.black);
         labelIndirizzo.setForeground(Color.white);
+
         panelInserimento.add(indirizzo);
         indirizzo.setOpaque(true);
         indirizzo.setBackground(new Color(61,59,59));
         indirizzo.setForeground(Color.white);
+
         panelInserimento.add(Box.createVerticalStrut(10));
         panelInserimento.add(labelCAP);
         labelCAP.setOpaque(true);
         labelCAP.setBackground(Color.black);
         labelCAP.setForeground(Color.white);
+
         panelInserimento.add(cap);
         cap.setOpaque(true);
         cap.setBackground(new Color(61,59,59));
@@ -75,9 +80,11 @@ public class FramePagamento {
 
         panelFin.add(Box.createVerticalStrut(20));
         panelFin.add(labelSpedizione);
+
         labelSpedizione.setOpaque(true);
         labelSpedizione.setBackground(Color.black);
         labelSpedizione.setForeground(Color.white);
+
         spedizione.setOpaque(true);
         spedizione.setBackground(new Color(61,59,59));
         spedizione.setForeground(Color.white);
@@ -97,11 +104,17 @@ public class FramePagamento {
         paga.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(!pswr.getText().isEmpty() && !cap.getText().isEmpty() && !indirizzo.getText().isEmpty()){
+                String passwordInserita = new String(pswr.getPassword());
+
+                if (!passwordInserita.equals(ControlloPsw.CheckPassword)) {
+                    JOptionPane.showMessageDialog(frame, "Password errata", "Errore", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                if (!passwordInserita.isEmpty() && !cap.getText().isEmpty() && !indirizzo.getText().isEmpty()) {
                     new FrameFinale();
                     frame.dispose();
                 }
-
             }
         });
 
