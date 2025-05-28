@@ -54,7 +54,6 @@ public class UomoShop {
         ImageIcon icon = new ImageIcon(percorsoImmagine);
         Image resizedImage = icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         JLabel labelImmagine = new JLabel(new ImageIcon(resizedImage));
-        labelImmagine.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JTextArea areaDescrizione = new JTextArea(descrizioneProdotto);
         areaDescrizione.setWrapStyleWord(true);
@@ -62,17 +61,19 @@ public class UomoShop {
         areaDescrizione.setEditable(false);
         areaDescrizione.setFocusable(false);
         areaDescrizione.setOpaque(false);
-        areaDescrizione.setFont(new Font("Arial", Font.PLAIN, 12));
-        areaDescrizione.setMaximumSize(new Dimension(200, 50));
-        areaDescrizione.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel labelPrezzo = new JLabel(prezzo);
-        labelPrezzo.setFont(new Font("Arial", Font.BOLD, 12));
-        labelPrezzo.setAlignmentX(Component.LEFT_ALIGNMENT);
         listaPrezziUomo.add(labelPrezzo);
 
         JButton bottoneCarrello = new JButton("Aggiungi");
-        bottoneCarrello.setAlignmentX(Component.LEFT_ALIGNMENT);
+        bottoneCarrello.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double prezzoDouble = Double.parseDouble(prezzo.replace("€", "").replace(",", "."));
+                Carrello.aggiungiProdotto(descrizioneProdotto.trim(), prezzoDouble);
+                JOptionPane.showMessageDialog(uomo, "Prodotto aggiunto al carrello!");
+            }
+        });
 
         prodottoPanel.add(labelImmagine);
         prodottoPanel.add(areaDescrizione);

@@ -64,8 +64,11 @@ public class FramePagamento {
         paga.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new FrameFinale();
-                frame.dispose();
+                if(!pswr.getText().isEmpty() && !cap.getText().isEmpty() && !indirizzo.getText().isEmpty()){
+                    new FrameFinale();
+                    frame.dispose();
+                }
+
             }
         });
 
