@@ -17,16 +17,20 @@ public class FrameFinale {
         frameFinale.setLayout(new BorderLayout());
 
 
-
         textArea.setFont(new Font("SansSerif", Font.BOLD, 16));
         textArea.setEditable(false);
         textArea.setFocusable(false);
         textArea.setWrapStyleWord(true);
         textArea.setLineWrap(true);
-        textArea.setOpaque(false);
+        textArea.setOpaque(true);
+        textArea.setBackground(Color.black);
+        textArea.setForeground(Color.white);
         textArea.setMargin(new Insets(20, 20, 20, 20));
         textArea.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        btn.setOpaque(true);
+        btn.setBackground(new Color(61,59,59));
+        btn.setForeground(Color.white);
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

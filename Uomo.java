@@ -24,6 +24,8 @@ public class Uomo {
 
         JPanel panelProd = new JPanel(new GridLayout(4, 2, 10, 10));
         panelProd.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panelProd.setOpaque(true);
+        panelProd.setBackground(Color.black);
 
 
         ImageIcon im15 = new ImageIcon("immagini/im15.jpg");
@@ -32,6 +34,9 @@ public class Uomo {
         jeansLevis.setHorizontalTextPosition(JLabel.CENTER);
         jeansLevis.setVerticalTextPosition(JLabel.BOTTOM);
         jeansLevis.setHorizontalAlignment(JLabel.CENTER);
+        jeansLevis.setOpaque(true);
+        jeansLevis.setBackground(Color.black);
+        jeansLevis.setForeground(Color.white);
         panelProd.add(jeansLevis);
 
 
@@ -41,6 +46,9 @@ public class Uomo {
         camiciaHugoBoss.setHorizontalTextPosition(JLabel.CENTER);
         camiciaHugoBoss.setVerticalTextPosition(JLabel.BOTTOM);
         camiciaHugoBoss.setHorizontalAlignment(JLabel.CENTER);
+        camiciaHugoBoss.setOpaque(true);
+        camiciaHugoBoss.setBackground(Color.black);
+        camiciaHugoBoss.setForeground(Color.white);
         panelProd.add(camiciaHugoBoss);
 
 
@@ -50,6 +58,9 @@ public class Uomo {
         giaccaNorthFace.setHorizontalTextPosition(JLabel.CENTER);
         giaccaNorthFace.setVerticalTextPosition(JLabel.BOTTOM);
         giaccaNorthFace.setHorizontalAlignment(JLabel.CENTER);
+        giaccaNorthFace.setOpaque(true);
+        giaccaNorthFace.setBackground(Color.black);
+        giaccaNorthFace.setForeground(Color.white);
         panelProd.add(giaccaNorthFace);
 
 
@@ -59,6 +70,9 @@ public class Uomo {
         poloLacoste.setHorizontalTextPosition(JLabel.CENTER);
         poloLacoste.setVerticalTextPosition(JLabel.BOTTOM);
         poloLacoste.setHorizontalAlignment(JLabel.CENTER);
+        poloLacoste.setOpaque(true);
+        poloLacoste.setBackground(Color.black);
+        poloLacoste.setForeground(Color.white);
         panelProd.add(poloLacoste);
 
 
@@ -68,6 +82,9 @@ public class Uomo {
         scarpeNike.setHorizontalTextPosition(JLabel.CENTER);
         scarpeNike.setVerticalTextPosition(JLabel.BOTTOM);
         scarpeNike.setHorizontalAlignment(JLabel.CENTER);
+        scarpeNike.setOpaque(true);
+        scarpeNike.setBackground(Color.black);
+        scarpeNike.setForeground(Color.white);
         panelProd.add(scarpeNike);
 
 
@@ -77,6 +94,9 @@ public class Uomo {
         pantaloniDockers.setHorizontalTextPosition(JLabel.CENTER);
         pantaloniDockers.setVerticalTextPosition(JLabel.BOTTOM);
         pantaloniDockers.setHorizontalAlignment(JLabel.CENTER);
+        pantaloniDockers.setOpaque(true);
+        pantaloniDockers.setBackground(Color.black);
+        pantaloniDockers.setForeground(Color.white);
         panelProd.add(pantaloniDockers);
 
 
@@ -86,6 +106,9 @@ public class Uomo {
         tShirtAdidas.setHorizontalTextPosition(JLabel.CENTER);
         tShirtAdidas.setVerticalTextPosition(JLabel.BOTTOM);
         tShirtAdidas.setHorizontalAlignment(JLabel.CENTER);
+        tShirtAdidas.setOpaque(true);
+        tShirtAdidas.setBackground(Color.black);
+        tShirtAdidas.setForeground(Color.white);
         panelProd.add(tShirtAdidas);
 
 
@@ -95,12 +118,20 @@ public class Uomo {
         cappottoZaraMan.setHorizontalTextPosition(JLabel.CENTER);
         cappottoZaraMan.setVerticalTextPosition(JLabel.BOTTOM);
         cappottoZaraMan.setHorizontalAlignment(JLabel.CENTER);
+        cappottoZaraMan.setOpaque(true);
+        cappottoZaraMan.setBackground(Color.black);
+        cappottoZaraMan.setForeground(Color.white);
         panelProd.add(cappottoZaraMan);
 
         uomo.add(panelProd, BorderLayout.CENTER);
 
         JPanel panelButton = new JPanel(new FlowLayout(FlowLayout.CENTER));
         goCatalogo.setPreferredSize(new Dimension(200, 40));
+        panelButton.setOpaque(true);
+        panelButton.setBackground(Color.black);
+        goCatalogo.setOpaque(true);
+        goCatalogo.setBackground(new Color(61,59,59));
+        goCatalogo.setForeground(Color.white);
         panelButton.add(goCatalogo);
         goCatalogo.addActionListener(new ActionListener() {
             @Override

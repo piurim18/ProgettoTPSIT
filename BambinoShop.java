@@ -16,6 +16,8 @@ public class BambinoShop {
 
         JPanel prodottiPanel = new JPanel(new GridLayout(4, 2));
         prodottiPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        prodottiPanel.setOpaque(true);
+        prodottiPanel.setBackground(Color.black);
 
 
         addProduct("Calze con dinosauri ", "immagini/im1.jpg", "€5.99", prodottiPanel);
@@ -30,7 +32,13 @@ public class BambinoShop {
         bambino.add(prodottiPanel, BorderLayout.CENTER);
 
         JPanel bottonePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        bottonePanel.setOpaque(true);
+        bottonePanel.setBackground(Color.black);
         goShop.setPreferredSize(new Dimension(200, 40));
+        goShop.setPreferredSize(new Dimension(200, 40));
+        goShop.setOpaque(true);
+        goShop.setBackground(new Color(61, 59, 59));
+        goShop.setForeground(Color.white);
         bottonePanel.add(goShop);
         goShop.addActionListener(new ActionListener() {
             @Override
@@ -48,12 +56,16 @@ public class BambinoShop {
 
     private void addProduct(String descrizioneProdotto, String percorsoImmagine, String prezzo, JPanel parentPanel) {
         JPanel prodottoPanel = new JPanel();
+        prodottoPanel.setOpaque(true);
+        prodottoPanel.setBackground(Color.black);
         prodottoPanel.setLayout(new BoxLayout(prodottoPanel, BoxLayout.Y_AXIS));
         prodottoPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         ImageIcon icon = new ImageIcon(percorsoImmagine);
         Image resizedImage = icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         JLabel labelImmagine = new JLabel(new ImageIcon(resizedImage));
+        labelImmagine.setOpaque(true);
+        labelImmagine.setBackground(Color.black);
         labelImmagine.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JTextArea areaDescrizione = new JTextArea(descrizioneProdotto);
@@ -64,20 +76,34 @@ public class BambinoShop {
         areaDescrizione.setOpaque(false);
         areaDescrizione.setFont(new Font("Arial", Font.PLAIN, 12));
         areaDescrizione.setMaximumSize(new Dimension(200, 50));
+        areaDescrizione.setOpaque(true);
+        areaDescrizione.setBackground(Color.black);
+        areaDescrizione.setForeground(Color.white);
         areaDescrizione.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel labelPrezzo = new JLabel(prezzo);
         labelPrezzo.setFont(new Font("Arial", Font.BOLD, 12));
+        labelPrezzo.setOpaque(true);
+        labelPrezzo.setBackground(Color.black);
+        labelPrezzo.setForeground(Color.white);
         labelPrezzo.setAlignmentX(Component.LEFT_ALIGNMENT);
         listaPrezziBambini.add(labelPrezzo);
 
         JButton bottoneCarrello = new JButton("Aggiungi");
+        bottoneCarrello.setOpaque(true);
+        bottoneCarrello.setBackground(new Color(61,59,59));
+        bottoneCarrello.setForeground(Color.white);
         bottoneCarrello.setAlignmentX(Component.LEFT_ALIGNMENT);
         bottoneCarrello.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 double prezzoD = Double.parseDouble(prezzo.replace("€",""));
                 Carrello.aggiungiProdotto(descrizioneProdotto,prezzoD);
+                UIManager.put("OptionPane.background", Color.black);
+                UIManager.put("Panel.background", Color.black);
+                UIManager.put("OptionPane.messageForeground", Color.white);
+                UIManager.put("Button.background", new Color(61, 59, 59));
+                UIManager.put("Button.foreground", Color.white);
                 JOptionPane.showMessageDialog(bambino,"Prodotto aggiunto al carrello!");
             }
         });

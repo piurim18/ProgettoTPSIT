@@ -13,17 +13,30 @@ public class FrameCarrello {
         JFrame frame = new JFrame();
         frame.setPreferredSize(new Dimension(500, 500));
         JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
+        mainPanel.setOpaque(true);
+        mainPanel.setBackground(Color.black);
         frame.setContentPane(mainPanel);
 
         labelLista.setHorizontalAlignment(SwingConstants.CENTER);
+        labelLista.setOpaque(true);
+        labelLista.setBackground(Color.black);
+        labelLista.setForeground(Color.white);
         mainPanel.add(labelLista, BorderLayout.NORTH);
 
         carrello.setEditable(false);
         carrello.setText(Carrello.getContenutoCarrello());
+        carrello.setOpaque(true);
+        carrello.setBackground(new Color(61,59,59));
+        carrello.setForeground(Color.white);
         mainPanel.add(new JScrollPane(carrello), BorderLayout.CENTER);
 
         JPanel panelBottone = new JPanel();
+        panelBottone.setOpaque(true);
+        panelBottone.setBackground(Color.black);
         btn.setPreferredSize(new Dimension(300, 50));
+        btn.setOpaque(true);
+        btn.setBackground(new Color(61,59,59));
+        btn.setForeground(Color.white);
         panelBottone.add(btn);
 
         btn.addActionListener(new ActionListener() {

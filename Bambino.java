@@ -46,6 +46,9 @@ public class Bambino {
         scarpeGeox.setHorizontalTextPosition(JLabel.CENTER);
         scarpeGeox.setVerticalTextPosition(JLabel.BOTTOM);
         scarpeGeox.setHorizontalAlignment(JLabel.CENTER);
+        scarpeGeox.setOpaque(true);
+        scarpeGeox.setBackground(Color.black);
+        scarpeGeox.setForeground(Color.white);
         panelProd.add(scarpeGeox);
 
 
@@ -55,6 +58,9 @@ public class Bambino {
         pantaloniZaraKids.setHorizontalTextPosition(JLabel.CENTER);
         pantaloniZaraKids.setVerticalTextPosition(JLabel.BOTTOM);
         pantaloniZaraKids.setHorizontalAlignment(JLabel.CENTER);
+        pantaloniZaraKids.setOpaque(true);
+        pantaloniZaraKids.setBackground(Color.black);
+        pantaloniZaraKids.setForeground(Color.white);
         panelProd.add(pantaloniZaraKids);
 
 
@@ -64,6 +70,9 @@ public class Bambino {
         magliettaOVS.setHorizontalTextPosition(JLabel.CENTER);
         magliettaOVS.setVerticalTextPosition(JLabel.BOTTOM);
         magliettaOVS.setHorizontalAlignment(JLabel.CENTER);
+        magliettaOVS.setOpaque(true);
+        magliettaOVS.setBackground(Color.black);
+        magliettaOVS.setForeground(Color.white);
         panelProd.add(magliettaOVS);
 
 
@@ -73,6 +82,9 @@ public class Bambino {
         giaccaBenetton.setHorizontalTextPosition(JLabel.CENTER);
         giaccaBenetton.setVerticalTextPosition(JLabel.BOTTOM);
         giaccaBenetton.setHorizontalAlignment(JLabel.CENTER);
+        giaccaBenetton.setOpaque(true);
+        giaccaBenetton.setBackground(Color.black);
+        giaccaBenetton.setForeground(Color.white);
         panelProd.add(giaccaBenetton);
 
 
@@ -82,6 +94,9 @@ public class Bambino {
         cappelloGap.setHorizontalTextPosition(JLabel.CENTER);
         cappelloGap.setVerticalTextPosition(JLabel.BOTTOM);
         cappelloGap.setHorizontalAlignment(JLabel.CENTER);
+        cappelloGap.setOpaque(true);
+        cappelloGap.setBackground(Color.black);
+        cappelloGap.setForeground(Color.white);
         panelProd.add(cappelloGap);
 
 
@@ -91,6 +106,9 @@ public class Bambino {
         zainoSeven.setHorizontalTextPosition(JLabel.CENTER);
         zainoSeven.setVerticalTextPosition(JLabel.BOTTOM);
         zainoSeven.setHorizontalAlignment(JLabel.CENTER);
+        zainoSeven.setOpaque(true);
+        zainoSeven.setBackground(Color.black);
+        zainoSeven.setForeground(Color.white);
         panelProd.add(zainoSeven);
 
 
@@ -100,12 +118,20 @@ public class Bambino {
         felpaNike.setHorizontalTextPosition(JLabel.CENTER);
         felpaNike.setVerticalTextPosition(JLabel.BOTTOM);
         felpaNike.setHorizontalAlignment(JLabel.CENTER);
+        felpaNike.setOpaque(true);
+        felpaNike.setBackground(Color.black);
+        felpaNike.setForeground(Color.white);
         panelProd.add(felpaNike);
 
         bambino.add(panelProd, BorderLayout.CENTER);
 
         JPanel panelButton = new JPanel(new FlowLayout(FlowLayout.CENTER));
         goCatalogo.setPreferredSize(new Dimension(200, 40));
+        panelButton.setOpaque(true);
+        panelButton.setBackground(Color.black);
+        goCatalogo.setOpaque(true);
+        goCatalogo.setBackground(new Color(61,59,59));
+        goCatalogo.setForeground(Color.white);
         panelButton.add(goCatalogo);
         goCatalogo.addActionListener(new ActionListener() {
             @Override
