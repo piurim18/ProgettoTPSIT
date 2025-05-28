@@ -19,7 +19,7 @@ public class FrameCarrello {
         mainPanel.add(labelLista, BorderLayout.NORTH);
 
         carrello.setEditable(false);
-        carrello.setText(Carrello.getContenutoCarrello()); // Mostra i dati attuali
+        carrello.setText(Carrello.getContenutoCarrello());
         mainPanel.add(new JScrollPane(carrello), BorderLayout.CENTER);
 
         JPanel panelBottone = new JPanel();
@@ -29,7 +29,7 @@ public class FrameCarrello {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new FramePagamento(); // Implementa se vuoi
+                new FramePagamento();
                 frame.dispose();
             }
         });
@@ -39,5 +39,6 @@ public class FrameCarrello {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }

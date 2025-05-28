@@ -79,6 +79,7 @@ public class FrameCatalogo {
 
         etaSesso.pack();
         etaSesso.setLocationRelativeTo(null);
+        etaSesso.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         etaSesso.setVisible(true);
     }
 

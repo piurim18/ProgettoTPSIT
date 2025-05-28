@@ -9,7 +9,7 @@ public class FramePagamento {
     JLabel labelCAP = new JLabel("CAP:");
     JLabel labelIndirizzo = new JLabel("Indirizzo:");
     JLabel labelSpedizione = new JLabel("Scegli tipo di spedizione:");
-    JTextField pswr = new JTextField();
+    JPasswordField pswr = new JPasswordField();
     JTextField cap = new JTextField();
     JTextField indirizzo = new JTextField();
     JComboBox spedizione = new JComboBox<>();

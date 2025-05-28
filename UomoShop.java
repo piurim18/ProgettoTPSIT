@@ -43,6 +43,7 @@ public class UomoShop {
 
         uomo.setLocationRelativeTo(null);
         uomo.setVisible(true);
+        uomo.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
 
@@ -69,8 +70,8 @@ public class UomoShop {
         bottoneCarrello.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                double prezzoDouble = Double.parseDouble(prezzo.replace("€", "").replace(",", "."));
-                Carrello.aggiungiProdotto(descrizioneProdotto.trim(), prezzoDouble);
+                double prezzoDouble = Double.parseDouble(prezzo.replace("€", ""));
+                Carrello.aggiungiProdotto(descrizioneProdotto, prezzoDouble);
                 JOptionPane.showMessageDialog(uomo, "Prodotto aggiunto al carrello!");
             }
         });

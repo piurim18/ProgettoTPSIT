@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class FrameLogin {
 
-    JLabel email = new JLabel("email");
+    JLabel email = new JLabel("email   (deve contentenere la '@')");
     JTextField textemail= new JTextField();
     JLabel pswr = new JLabel("password");
     JPasswordField textpswrd = new JPasswordField();
@@ -72,9 +72,10 @@ public class FrameLogin {
 
                 if(condizioni.isSelected() == true && !textpswrd.getText().isEmpty() && !textemail.getText().isEmpty() && textemail.getText().contains("@")){
                      new FrameShop();
+                    frameLogin.dispose();
                 }
 
-                frameLogin.dispose();
+
             }
         });
         logFIn.add(vaiShop);
@@ -102,6 +103,7 @@ public class FrameLogin {
 
         frameLogin.pack();
         frameLogin.setLocationRelativeTo(null);
+        frameLogin.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frameLogin.setVisible(true);
     }
 

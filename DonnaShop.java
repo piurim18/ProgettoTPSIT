@@ -42,6 +42,7 @@ public class DonnaShop {
 
         donna.setVisible(true);
         donna.setLocationRelativeTo(null);
+        donna.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     private void addProduct(String descrizioneProdotto, String percorsoImmagine, String prezzo, JPanel pannello) {
@@ -74,6 +75,15 @@ public class DonnaShop {
 
 
         JButton bottoneCarrello = new JButton("Aggiungi");
+        bottoneCarrello.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                double prezzoDouble = Double.parseDouble(prezzo.replace("€", ""));
+                Carrello.aggiungiProdotto(descrizioneProdotto, prezzoDouble);
+                JOptionPane.showMessageDialog(donna, "Prodotto aggiunto al carrello!");
+            }
+        });
         bottoneCarrello.setAlignmentX(Component.LEFT_ALIGNMENT);
 
 

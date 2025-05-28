@@ -73,6 +73,14 @@ public class BambinoShop {
 
         JButton bottoneCarrello = new JButton("Aggiungi");
         bottoneCarrello.setAlignmentX(Component.LEFT_ALIGNMENT);
+        bottoneCarrello.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double prezzoD = Double.parseDouble(prezzo.replace("€",""));
+                Carrello.aggiungiProdotto(descrizioneProdotto,prezzoD);
+                JOptionPane.showMessageDialog(bambino,"Prodotto aggiunto al carrello!");
+            }
+        });
 
         prodottoPanel.add(labelImmagine);
         prodottoPanel.add(areaDescrizione);
